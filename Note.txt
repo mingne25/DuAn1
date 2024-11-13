@@ -1,0 +1,3 @@
+Các thao tác của git
+Đẩy code lên git: "git add ."
+Lấy code từ git xuống: "git pull origin main"
