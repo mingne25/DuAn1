@@ -9,7 +9,7 @@ class HomeController
     }
 
     public function home() {
-        echo "Day la home";
+        echo "Day la trang home";
     }
     public function trangChu(){
         echo " day la trang chu";
