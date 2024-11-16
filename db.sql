@@ -42,7 +42,7 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `categories` (
   `category_id` int NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `name_dm` varchar(100) NOT NULL,
   `mo_ta` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -50,7 +50,7 @@ CREATE TABLE `categories` (
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`category_id`, `name`, `mo_ta`) VALUES
+INSERT INTO `categories` (`category_id`, `name_dm`, `mo_ta`) VALUES
 (1, 'Chó xù', 'Chó ngoan'),
 (2, 'Minh thèm shit', 'Chó Hư');
 
