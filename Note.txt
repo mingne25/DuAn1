@@ -1,3 +1,7 @@
 Các thao tác của git
-Đẩy code lên git: "git add ."
+Làm mới git: git fetch
+chuyển hướng sang nhánh code của mình: git checkout "tên đã gửi trong zalo"
 Lấy code từ git xuống: "git pull origin main"
+Đẩy code lên git: "git add ."
+Đẩy code lên git: "git commit -m "ghi chú"
+Đẩy code lên git: "git push origin main"
