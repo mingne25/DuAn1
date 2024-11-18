@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Require file Common
 require_once '../commons/env.php'; // Khai báo biến môi trường
@@ -6,11 +6,11 @@ require_once '../commons/function.php'; // Hàm hỗ trợ
 
 // Require toàn bộ file Controllers
 require_once './controllers/AdminDanhMucController.php';
-// require_once './controllers/AdminSanPhamController.php';
+require_once './controllers/AdminSanPhamController.php';
 
 // Require toàn bộ file Models
 require_once './models/AdminDanhMuc.php';
-// require_once './controllers/AdminSanPham.php';
+require_once './models/AdminSanPham.php';
 
 
 // Route
@@ -29,4 +29,11 @@ match ($act) {
     'sua-danh-muc' => (new AdminDanhMucController())->postEditDanhMuc(),
     'xoa-danh-muc' => (new AdminDanhMucController())->deleteDanhMuc(),
 
+    // route san pham
+    'san-pham' => (new AdminSanPhamController())->danhSachSanPham(),
+    'form-them-san-pham' => (new AdminSanPhamController())->formAddSanPham(),
+    'them-san-pham' => (new AdminSanPhamController())->postAddSanPham(),
+    // 'form-sua-san-pham' => (new AdminSanPhamController())->formEditSanPham(),
+    // 'sua-san-pham' => (new AdminSanPhamController())->postEditSanPham(),
+    // 'xoa-san-pham' => (new AdminSanPhamController())->deleteSanPham(),
 };
