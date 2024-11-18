@@ -1,0 +1,151 @@
+/* Reset CSS */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-banner {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+.search-cart {
+    display: flex;
+    align-items: center;
+}
+
+.search-cart input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.icons a {
+    margin: 0 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.breadcrumb {
+    margin: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.cart-section {
+    padding: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-actions {
+    text-align: left;
+}
+.cart-actions button:hover{
+    background-color: red;
+}
+
+.cart-actions .btn-return, .cart-actions .btn-update {
+    padding: 10px 20px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.cart-summary button:hover{
+    background-color:chartreuse;
+}
+.coupon input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+}
+
+.coupon button {
+    padding: 10px 20px;
+    border: none;
+    background: red;
+    color: #fff;
+    cursor: pointer;
+}
+
+.total-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+}
+
+.total-box p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.total-box button {
+    padding: 10px 20px;
+    border: none;
+    background: red;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
