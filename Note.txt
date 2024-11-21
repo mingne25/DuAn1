@@ -4,4 +4,4 @@ chuyển hướng sang nhánh code của mình: git checkout "tên đã gửi tr
 Lấy code từ git xuống: "git pull origin main"
 Đẩy code lên git: "git add ."
 Đẩy code lên git: "git commit -m "ghi chú"
-Đẩy code lên git: "git push origin main"
+Đẩy code lên git: "git push"

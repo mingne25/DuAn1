@@ -1,14 +1,11 @@
 <!-- header -->
 <?php include './views/layout/header.php'; ?>
 <!-- end header -->
-
 <!-- Navbar -->
 <?php include './views/layout/navbar.php'; ?>
 <!-- /.navbar -->
-
 <!-- Main Sidebar Container -->
 <?php include './views/layout/sidebar.php'; ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -21,7 +18,6 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
-
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
@@ -54,14 +50,14 @@
                       <td><?= $key + 1 ?></td>
                       <td><?= $sanPham['name_sp'] ?></td>
                       <td>
-                        <img src="<?= BASE_URL . $sanPham['img_sp'] ?>" style="width: 100px"
+                        <img src="<?= BASE_URL . $sanPham['img'] ?>" style="width: 100px"
                             onerror="this.onerror=null; this.src='https://toplist.vn/images/800px/hoa-thuoc-duoc-513003.jpg'"
                         >
                       </td>
                       <td><?= $sanPham['price'] ?></td>
                       <td><?= $sanPham['quantity'] ?></td>
-                      <td><?= $sanPham['category_id'] ?></td>
-                      <td><?= $sanPham['statuss'] > 0 ? 'Còn sản phẩm':'Hết sản phẩm'; ?></td>
+                      <td><?= $sanPham['name_dm'] ?></td>
+                      <td><?= $sanPham['statuss'] > 0 ? 'Còn bán':'Dừng bán'; ?></td>
                       <td>
                         <a href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&product_id=' . $sanPham['product_id'] ?>"> 
                         <button class="btn btn-warning">Sửa</button>
@@ -101,10 +97,8 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 <!-- footer -->
 <?php include './views/layout/footer.php'; ?>
-
 <!-- end footer -->
 <!-- Page specific script -->
 <script>
@@ -164,5 +158,4 @@
   // ]]>
 </script>
 </body>
-
 </html>
