@@ -56,7 +56,7 @@
                         </a>
                         <a href="<?= BASE_URL_ADMIN . '?act=xoa-danh-muc&category_id=' . $danhMuc['category_id'] ?>" 
                           onclick="return confirm('Bạn có đồng ý xóa hay không?') "> 
-                        <button class="btn btn-warning">Xóa</button>
+                        <button class="btn btn-danger">Xóa</button>
                         </a>
                       </td>
                     </tr>

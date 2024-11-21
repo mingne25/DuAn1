@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th10 18, 2024 lúc 10:16 AM
+-- Thời gian đã tạo: Th10 20, 2024 lúc 05:54 PM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.1.10
 
@@ -51,21 +51,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `name_dm`, `mo_ta`) VALUES
-(1, 'Chó xù', 'Chó ngoan'),
-(2, 'Minh thèm shit', 'Chó Hư');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `colors`
---
-
-CREATE TABLE `colors` (
-  `color_id` int NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `color_code` varchar(7) NOT NULL COMMENT 'e.g., #FFFFFF',
-  `status` enum('active','inactive') DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+(1, 'Chó xù', 'Chó ngoan nhất'),
+(2, 'Minh thèm shit', 'Chó Hư thèm cứt'),
+(3, 'chó husky', 'chó husky ngáo ngơ'),
+(5, 'mèo', 'trang mèo');
 
 -- --------------------------------------------------------
 
@@ -76,7 +65,7 @@ CREATE TABLE `colors` (
 CREATE TABLE `images` (
   `image_id` int NOT NULL,
   `link_img` varchar(255) NOT NULL,
-  `product_variant_id` int NOT NULL
+  `product_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -126,80 +115,29 @@ CREATE TABLE `payments` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `productcategories`
---
-
-CREATE TABLE `productcategories` (
-  `product_id` int NOT NULL,
-  `category_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int NOT NULL,
-  `sku` varchar(50) NOT NULL,
   `name_sp` varchar(255) NOT NULL,
-  `description` text,
-  `statuss` enum('active','inactive') DEFAULT 'active',
-  `category_id` int DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `price` decimal(10,0) DEFAULT NULL,
+  `price_km` decimal(10,0) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `quantity` int NOT NULL,
+  `views` int NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mo_ta` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `category_id` int NOT NULL,
+  `statuss` enum('active','inactive') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`product_id`, `sku`, `name_sp`, `description`, `status`, `category_id`, `created_at`) VALUES
-(3, 'SP01', 'Minh', 'moo tar', 'active', 0, '2024-11-18 12:19:52');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `productvariants`
---
-
-CREATE TABLE `productvariants` (
-  `product_variant_id` int NOT NULL,
-  `product_id` int DEFAULT NULL,
-  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `price` decimal(10,0) NOT NULL,
-  `price_km` decimal(10,0) DEFAULT NULL,
-  `quantity` int DEFAULT '0',
-  `color_id` int DEFAULT NULL,
-  `size_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `reviews`
---
-
-CREATE TABLE `reviews` (
-  `review_id` int NOT NULL,
-  `user_id` int DEFAULT NULL,
-  `product_id` int DEFAULT NULL,
-  `rating` int DEFAULT NULL,
-  `comment` text,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sizes`
---
-
-CREATE TABLE `sizes` (
-  `size_id` int NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `status` enum('active','inactive') DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `products` (`product_id`, `name_sp`, `price`, `price_km`, `img`, `quantity`, `views`, `created_at`, `mo_ta`, `category_id`, `statuss`) VALUES
+(3, 'Minh', 15000, 14000, '', 9, 0, '2024-11-20 15:53:01', 'Mô tả', 2, 'active');
 
 -- --------------------------------------------------------
 
@@ -239,17 +177,10 @@ ALTER TABLE `categories`
   ADD UNIQUE KEY `name_dm` (`name_dm`);
 
 --
--- Chỉ mục cho bảng `colors`
---
-ALTER TABLE `colors`
-  ADD PRIMARY KEY (`color_id`);
-
---
 -- Chỉ mục cho bảng `images`
 --
 ALTER TABLE `images`
-  ADD PRIMARY KEY (`image_id`),
-  ADD KEY `lk_sanpham_image_1` (`product_variant_id`);
+  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Chỉ mục cho bảng `orderdetails`
@@ -275,41 +206,10 @@ ALTER TABLE `payments`
   ADD KEY `order_id` (`order_id`);
 
 --
--- Chỉ mục cho bảng `productcategories`
---
-ALTER TABLE `productcategories`
-  ADD PRIMARY KEY (`product_id`,`category_id`),
-  ADD KEY `category_id` (`category_id`);
-
---
 -- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD UNIQUE KEY `sku` (`sku`);
-
---
--- Chỉ mục cho bảng `productvariants`
---
-ALTER TABLE `productvariants`
-  ADD PRIMARY KEY (`product_variant_id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `color_id` (`color_id`),
-  ADD KEY `size_id` (`size_id`);
-
---
--- Chỉ mục cho bảng `reviews`
---
-ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`review_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `product_id` (`product_id`);
-
---
--- Chỉ mục cho bảng `sizes`
---
-ALTER TABLE `sizes`
-  ADD PRIMARY KEY (`size_id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Chỉ mục cho bảng `users`
@@ -333,13 +233,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT cho bảng `colors`
---
-ALTER TABLE `colors`
-  MODIFY `color_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `images`
@@ -372,24 +266,6 @@ ALTER TABLE `products`
   MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `productvariants`
---
-ALTER TABLE `productvariants`
-  MODIFY `product_variant_id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `reviews`
---
-ALTER TABLE `reviews`
-  MODIFY `review_id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `sizes`
---
-ALTER TABLE `sizes`
-  MODIFY `size_id` int NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
@@ -405,12 +281,6 @@ ALTER TABLE `users`
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE;
-
---
--- Các ràng buộc cho bảng `images`
---
-ALTER TABLE `images`
-  ADD CONSTRAINT `lk_sanpham_image_1` FOREIGN KEY (`product_variant_id`) REFERENCES `productvariants` (`product_variant_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Các ràng buộc cho bảng `orderdetails`
@@ -430,28 +300,6 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `payments`
   ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE;
-
---
--- Các ràng buộc cho bảng `productcategories`
---
-ALTER TABLE `productcategories`
-  ADD CONSTRAINT `productcategories_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `productcategories_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE;
-
---
--- Các ràng buộc cho bảng `productvariants`
---
-ALTER TABLE `productvariants`
-  ADD CONSTRAINT `productvariants_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `productvariants_ibfk_2` FOREIGN KEY (`color_id`) REFERENCES `colors` (`color_id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `productvariants_ibfk_3` FOREIGN KEY (`size_id`) REFERENCES `sizes` (`size_id`) ON DELETE SET NULL;
-
---
--- Các ràng buộc cho bảng `reviews`
---
-ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
