@@ -276,4 +276,17 @@ class AdminSanPhamControllers {
         exit();
     }
     
+    public function updateTrangThaiBinhLuan(){
+        $id_binh_luan = $_GET['id_binh_luan'];
+        $binhLuan = $this->modelSanPham->getDetailBinhLuan($id_binh_luan);
+
+        if($binhLuan){
+            $trang_thai_update = '';
+            if ($binhLuan['trang_thai'] == 1){
+                $trang_thai_update = 2;
+            } else{
+                $trang_thai_update = 1;
+            }
+        }
+    }
 }

@@ -63,7 +63,7 @@
               <div class="row">
                 <div class="col-12" style="color: blueviolet;">
                   <h4>
-                    <i class="nav-icon fas fa-paw"></i> TEDDY SHOP.
+                    <i class="fas fa-tshirt"></i> FAE SHOP.
                     <small class="float-right">Ngày đặt: <?=formatDate($donHang['ngay_dat'])?></small>
                   </h4>
                 </div>

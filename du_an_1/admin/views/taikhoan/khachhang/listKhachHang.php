@@ -70,10 +70,10 @@
                    <td><?= $khachHang['dia_chi']  ?></td>
                    <td><?= $khachHang['trang_thai']==1 ? 'Active':'Inactive'  ?></td>
                    <td>
-                    <div class="btn-group" style="display: flex;gap:5px;">
-                    <!-- <a href="<?= BASE_URL_ADMIN .'?act=chi-tiet-khach-hang&id_khach_hang='. $khachHang['id']?>"><button class="btn btn-primary">Chi tiết</button></a> -->
+                    <div class="btn-group" style="display: flex;gap:7px;">
+                        <a href="<?= BASE_URL_ADMIN .'?act=chi-tiet-khach-hang&id_khach_hang='. $khachHang['id']?>"><button class="btn btn-primary"><i class="far fa-eye"></i></button></a>
                         <a href="<?= BASE_URL_ADMIN .'?act=from-sua-khach-hang&id_khach_hang='. $khachHang['id']?>"><button class="btn btn-warning"><i class="fa fa-wrench"></i></button></a>
-                        <a href="<?= BASE_URL_ADMIN .'?act=reset-password&id_quan_tri='. $khachHang['id']?>" onclick="return confirm('Bạn có muoonns reset password của tài khoản này không?')">
+                        <a href="<?= BASE_URL_ADMIN .'?act=reset-password&id_quan_tri='. $khachHang['id']?>" onclick="return confirm('Bạn có muốn reset password của tài khoản này không?')">
                         <button class="btn btn-danger"><i class="fa fa-recycle"></i></button>
                         </a>
                     </div>

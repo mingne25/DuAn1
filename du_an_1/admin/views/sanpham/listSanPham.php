@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý danh sách thú cưng</h1>
+            <h1>Quản lý danh sách sản phẩm</h1>
           </div>
           
         </div>
@@ -32,7 +32,7 @@
             <div class="card">
               <div class="card-header">
                <a href="<?= BASE_URL_ADMIN .'?act=from-them-san-pham'?>">
-                <button class="btn btn-success">Thêm gấu bông mới</button>
+                <button class="btn btn-success">Thêm sản phẩm</button>
                </a>
               </div>
               <!-- /.card-header -->
@@ -42,7 +42,7 @@
                   <tr>
                     <th>STT</th>
                    <th>Tên sản phẩm</th>
-                   <th>Ảnh san phẩm</th>
+                   <th>Ảnh sản phẩm</th>
                    <th>Giá tiền</th>
                    <th>Số lượng</th>
                    <th>ID danh mục</th>
@@ -73,8 +73,6 @@
                    <a href="<?= BASE_URL_ADMIN .'?act=chi-tiet-san-pham&id_san-pham='. $sanPham['id']?>"><button class="btn btn-primary"><i class="far fa-eye"></i></button></a>
                     <a href="<?= BASE_URL_ADMIN .'?act=from-sua-san-pham&id_san-pham='. $sanPham['id']?>"><button class="btn btn-warning"><i class="fa fa-wrench"></i></button></a>
                      <a href="<?= BASE_URL_ADMIN .'?act=xoa-san-pham&id_san_pham='. $sanPham['id']?>" onclick="return confirm('Bạn muốn xóa thật không?')">
-
-                  
                      <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                      </a>
                    </div>
