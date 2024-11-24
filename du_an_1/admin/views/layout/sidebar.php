@@ -4,9 +4,9 @@
 
     
 
-      <img src="./assets/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="/du_an_1/admin/assets/dist/img/LOGO.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 
-      <span class="brand-text font-weight-light">TEDDY</span>
+      <span class="brand-text font-weight-light">FAESHOP</span>
     </a>
 
     <!-- Sidebar -->
@@ -17,7 +17,7 @@
           <img src="./assets/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">GROUP 6</a>
+          <a href="#" class="d-block">GROUP 4</a>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= BASE_URL_ADMIN .'?act=san-pham'?> "class="nav-link">
-            <i class="nav-icon fas fa-paw"></i>
+            <i class="nav-icon fas fa-tshirt"></i>
               <p>
                 Sản phẩm
                 

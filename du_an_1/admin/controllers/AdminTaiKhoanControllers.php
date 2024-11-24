@@ -1,8 +1,13 @@
 <?php
 class AdminTaiKhoanControllers{
     public $modelTaiKhoan;
+    public $modelDonHang;
+    public $modelSanPham;
     public function __construct(){
+
         $this->modelTaiKhoan = new AdminTaiKhoan();
+        $this->modelDonHang = new AdminDonHang();
+        $this->modelSanPham = new AdminSanPham();
     }
     public function danhSachQuanTri(){
         $listQuanTri=$this->modelTaiKhoan->getAllTaiKhoan(1);
@@ -92,7 +97,7 @@ class AdminTaiKhoanControllers{
 
         if (empty($errors)) {
             // Gọi hàm update sản phẩm và chuyển hướng về trang "san-pham"
-            $this->modelTaiKhoan->updateTaiKhoan($quan_tri_id,  $ho_ten, $email, $so_dien_thoai, $trang_thai);
+            $this->modelTaiKhoan->updateTaiKhoan($quan_tri_id, $ho_ten, $email, $so_dien_thoai, $trang_thai);
             
             // Chuyển hướng về trang san-pham sau khi cập nhật thành công
             header("Location: ".BASE_URL_ADMIN."?act=list-tai-khoan-quan-tri");
@@ -180,7 +185,7 @@ public function danhSachKhachHang(){
         
                 if (empty($errors)) {
                     // Gọi hàm update sản phẩm và chuyển hướng về trang "san-pham"
-                    $this->modelTaiKhoan->updateTaiKhoanKhachHang($id_khach_hang,  $ho_ten, $email, $so_dien_thoai,$gioi_tinh,$dia_chi, $trang_thai);
+                    $this->modelTaiKhoan->updateTaiKhoanKhachHang($id_khach_hang, $ho_ten, $email, $so_dien_thoai,$gioi_tinh,$dia_chi, $trang_thai);
                     
                     // Chuyển hướng về trang san-pham sau khi cập nhật thành công
                     header("Location: ".BASE_URL_ADMIN."?act=list-tai-khoan-khach-hang");
@@ -195,12 +200,16 @@ public function danhSachKhachHang(){
             }
         
         }
-        // public function detailKhachHang() {
-        //     $id_khach_hang=$_GET['id_khach_hang'];
+        
+        public function detailKhachHang() {
+            $id_khach_hang= $_GET['id_khach_hang'];
 
-        //     $khachHang=$this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);  
-        //     $listDonang=$this->modelDonhang->getDonHangFromKhachHang($id_khach_hang);
-        //     require_once './views/taikhoan/khachhang/detailKhachHang.php';
-        // }
+            $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+            
+            $listDonHang = $this->modelDonHang->getDonHangFromKhachHang($id_khach_hang);
+
+            $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);
+            require_once './views/taikhoan/khachhang/detailKhachHang.php';
+        }
         
     }

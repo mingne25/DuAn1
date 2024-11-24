@@ -50,26 +50,25 @@
                   </thead>
                   <tbody>
                     <?php foreach($listDonHang as $key=> $donHang) :?>
-
-                  <tr>
-                   <td><?=$key+1?></td> 
-                   <td><?= $donHang['ma_don_hang']  ?></td>
-                   <td><?=  $donHang['ten_nguoi_nhan']  ?></td>
-                   <td><?=  $donHang['sdt_nguoi_nhan']  ?></td>
-                   <td><?=formatDate($donHang['ngay_dat'])?></td>
-                   <td><?=  $donHang['tong_tien']  ?></td>
-                   <td><?=  $donHang['ten_trang_thai']  ?></td>
-                   
-                   <td>
-                    <div class="btn-group" style="display: flex;gap:5px;">
-                    <a href="<?= BASE_URL_ADMIN .'?act=from-sua-don-hang&id_don_hang='. $donHang['id']?>"><button class="btn btn-warning"><i class="fa fa-wrench"></i></button></a>
+                      <tr>
+                      <td><?=$key+1?></td> 
+                      <td><?= $donHang['ma_don_hang']  ?></td>
+                      <td><?=  $donHang['ten_nguoi_nhan']  ?></td>
+                      <td><?=  $donHang['sdt_nguoi_nhan']  ?></td>
+                      <td><?=formatDate($donHang['ngay_dat'])?></td>
+                      <td><?=  $donHang['tong_tien']  ?></td>
+                      <td><?=  $donHang['ten_trang_thai']  ?></td>
                       
-                    <a href="<?= BASE_URL_ADMIN .'?act=chi-tiet-don-hang&id_don_hang='. $donHang['id']?>">
-                    <button class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
-                    </div>
-                   </td>
-                  </tr>
-                <?php endforeach ?>
+                      <td>
+                        <div class="btn-group" style="display: flex;gap:5px;">
+                        <a href="<?= BASE_URL_ADMIN .'?act=from-sua-don-hang&id_don_hang='. $donHang['id']?>"><button class="btn btn-warning"><i class="fa fa-wrench"></i></button></a>
+                          
+                        <a href="<?= BASE_URL_ADMIN .'?act=chi-tiet-don-hang&id_don_hang='. $donHang['id']?>">
+                        <button class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+                        </div>
+                      </td>
+                      </tr>
+                    <?php endforeach ?>
                   </tbody>
                   <tfoot>
                   <tr>

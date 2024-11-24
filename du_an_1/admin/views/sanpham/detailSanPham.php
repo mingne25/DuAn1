@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý danh sách thú cưng</h1>
+            <h1>Quản lý danh sách sản phẩm</h1>
           </div>
           
         </div>
@@ -41,7 +41,7 @@
           <?php endforeach ?>
       </div>
       <div class="col-12 col-sm-6">
-        <h3 class="my-3">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+        <h3 class="my-3">áo đẹp</h3>
         <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.aa</p>
 
         <hr>

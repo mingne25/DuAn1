@@ -25,6 +25,7 @@ match ($act) {
     //route báo cáo thống kê--trang chủ
     '/'=>(new AdminBaoCaoThongKeControllers())->home(),
     // Dashboards
+    // route danh mục
     'danhmuc' => (new AdminDanhMucControllers())->danhSachdanhMuc(),
     'from-them-danh-muc' => (new AdminDanhMucControllers())->formAddDanhMuc(),
     'them-danh-muc' => (new AdminDanhMucControllers())->postAddDanhMuc(),
@@ -32,6 +33,7 @@ match ($act) {
     'sua-danh-muc' => (new AdminDanhMucControllers())->posteditDanhMuc(), 
     'xoa-danh-muc' => (new AdminDanhMucControllers())->deleteDanhMuc(),
    
+    // route sản phẩm
     'san-pham' => (new AdminSanPhamControllers())->danhSachSanPham(),
     'from-them-san-pham' => (new AdminSanPhamControllers())->formAddSanPham(),
     'them-san-pham' => (new AdminSanPhamControllers())->postAddSanPham(),
@@ -39,12 +41,15 @@ match ($act) {
     'sua-san-pham' => (new AdminSanPhamControllers())->posteditSanPham(), 
     'sua-album-anh-pham' => (new AdminSanPhamControllers())->posteditAnhSanPham(), 
     'chi-tiet-san-pham' => (new AdminSanPhamControllers())->detailSanPham(),
+    'xoa-san-pham' => (new AdminSanPhamControllers())->deleteSanPham(),
 
-     'xoa-san-pham' => (new AdminSanPhamControllers())->deleteSanPham(),
+    // route bình luận
+    'update-trang-thai-binh-luan' => (new AdminSanPhamControllers())->updateTrangThaiBinhLuan(),
+
    //route quản lí đơn hàng
    'don-hang' => (new AdminDonHangControllers())->danhSachDonHang(),
-//    'from-sua-don-hang' => (new AdminDonHangControllers())->formEditDonHang(),
-//    'sua-don-hang' => (new AdminDonHangControllers())->posteditDonHang(),
+   'from-sua-don-hang' => (new AdminDonHangControllers())->formEditDonHang(),
+   'sua-don-hang' => (new AdminDonHangControllers())->posteditDonHang(),
    'chi-tiet-don-hang' => (new AdminDonHangControllers())->detailDonHang(), 
 
 //route quản lí tài khoản
