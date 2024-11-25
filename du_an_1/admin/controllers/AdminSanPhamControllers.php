@@ -100,7 +100,7 @@ class AdminSanPhamControllers {
     public function formEditSanPham() {
      
     
-        $id = $_GET['id_san-pham'];
+        $id = $_GET['id_san_pham'];
         $sanPham = $this->modelSanPham->getDetailSanPham($id);
         // var_dump($sanPham);die;
         $listAnhSanPham =$this->modelSanPham->getListAnhSanPham($id);
@@ -115,24 +115,24 @@ class AdminSanPhamControllers {
        
 
     }
-    public function detailSanPham() {
-     
-    
-        $id = $_GET['id_san-pham'];
-        $sanPham = $this->modelSanPham->getDetailSanPham($id);
-        // var_dump($sanPham);die;
-        $listAnhSanPham =$this->modelSanPham->getListAnhSanPham($id);
-        // var_dump($listAnhSanPham);die;
-        if($sanPham){
-            require_once "./views/sanpham/detailSanPham.php";
-            
-        }else{
-            header("location:".BASE_URL_ADMIN .'?act=san-pham');
-                exit();
-        }
-       
+    public function detailSanPham() 
+        {  
+            $id = $_GET['id_san_pham'];
+            $sanPham = $this->modelSanPham->getDetailSanPham($id);
+            // var_dump($sanPham);die;
+            $listAnhSanPham =$this->modelSanPham->getListAnhSanPham($id);
+            $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
+            // var_dump($listAnhSanPham);die;
+            if($sanPham){
+                require_once "./views/sanpham/detailSanPham.php";
+                
+            }else{
+                header("location:".BASE_URL_ADMIN .'?act=san-pham');
+                    exit();
+            }
+        
 
-    }
+        }
 
     public function posteditSanPham() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -245,7 +245,7 @@ class AdminSanPhamControllers {
                     deleteFile($anhSP['link_hinh_anh']);
                 }
             }
-            header("Location: ".BASE_URL_ADMIN."?act=from-sua-san-pham&id_san-pham=".$san_pham_id);
+            header("Location: ".BASE_URL_ADMIN."?act=from-sua-san-pham&id_san_pham=".$san_pham_id);
                 exit();
         }
     }
@@ -277,15 +277,23 @@ class AdminSanPhamControllers {
     }
     
     public function updateTrangThaiBinhLuan(){
-        $id_binh_luan = $_GET['id_binh_luan'];
+        $id_binh_luan = $_POST['id_binh_luan'];
+        $name_view = $_POST['name_view'];
         $binhLuan = $this->modelSanPham->getDetailBinhLuan($id_binh_luan);
-
         if($binhLuan){
             $trang_thai_update = '';
             if ($binhLuan['trang_thai'] == 1){
                 $trang_thai_update = 2;
             } else{
                 $trang_thai_update = 1;
+            }
+            $status = $this->modelSanPham->updateTrangThaiBinhLuan($id_binh_luan, $trang_thai_update);
+            if($status){
+                if ($name_view == 'detail_khach') {
+                    header("location:" . BASE_URL_ADMIN . '?act=chi-tiet-khach-hang&id_khach_hang=' . $binhLuan['tai_khoan_id'] );
+                } else {
+                    header("location:" . BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $binhLuan['san_pham_id'] );
+                }
             }
         }
     }

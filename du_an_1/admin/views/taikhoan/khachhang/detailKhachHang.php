@@ -69,7 +69,7 @@
         </div>
         <div class="col-12">
           <hr>
-          <h2>Thông tin mua hàng</h2>
+          <h2>Lịch sử mua hàng</h2>
           <div>
             <table id="example1" class="table table-bordered table-striped">
               <thead>
@@ -132,7 +132,7 @@
                   <tr>
                     <td><?= $key + 1 ?></td>
                     <td>
-                      <a target="_blank" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san-pham=' . $binhLuan['san_pham_id']; ?>">
+                      <a target="_blank" href="<?= BASE_URL_ADMIN . '?act=chi-tiet-san-pham&id_san_pham=' . $binhLuan['san_pham_id']; ?>">
                         <?= $binhLuan['ten_san_pham']  ?>
                       </a>
                     </td>
@@ -140,10 +140,13 @@
                     <td><?= $binhLuan['ngay_dang']  ?></td>
                     <td><?= $binhLuan['trang_thai'] == 1 ? 'Hiển thị' : 'Bị ẩn' ?></td>
                     <td>
-                      <a href="<?= BASE_URL_ADMIN .'?act=update-trang-thai-binh-luan&id_binh_luan='. $binhLuan['id']?>"
-                        onclick="return confirm('Bạn có muốn ẩn bình luận này không?')">
-                        <button class="btn btn-danger">Ẩn/Bỏ ẩn</button>
-                      </a>
+                      <form action="<?= BASE_URL_ADMIN . '?act=update-trang-thai-binh-luan' ?>" method="POST">
+                        <input type="hidden" name="id_binh_luan" value="<?= $binhLuan['id'] ?> ">
+                        <input type="hidden" name="name_view" value="detail_khach">
+                        <button onclick="return confirm('Bạn có muốn ẩn bình luận này không?')" class="btn btn-warning">
+                          <?= $binhLuan['trang_thai'] == 1 ? 'Ẩn' : 'Bỏ ẩn' ?>
+                        </button>
+                      </form>
                     </td>
                   </tr>
                 <?php endforeach ?>
