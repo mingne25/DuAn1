@@ -52,11 +52,7 @@ class AdminDonHangControllers {
             $dia_chi_nguoi_nhan= $_POST['dia_chi_nguoi_nhan'] ?? '';
             $ghi_chu= $_POST['ghi_chu'] ?? '';
             $trang_thai_id = $_POST['trang_thai_id'];
-    
-           
-    
-            $errors = [];
-            
+            $errors = [];     
             if (empty($ten_nguoi_nhan)) {
                 $errors['ten_nguoi_nhan'] = 'Tên người nhân không được để trống';
             }

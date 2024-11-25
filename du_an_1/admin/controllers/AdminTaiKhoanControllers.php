@@ -211,5 +211,39 @@ public function danhSachKhachHang(){
             $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);
             require_once './views/taikhoan/khachhang/detailKhachHang.php';
         }
+
+
+
+        public function formLogin(){
+            require_once './views/auth/formLogin.php';
+
+            deleteSessionError();
+        }
+
+
+        public function login(){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+
+                // var_dump($email);die;
+                // Xử lí kiểm tra thông tin đăng nhập
+                $user = $this->modelTaiKhoan->checkLogin($email, $password);
+
+                if ($user) { // Trường hợp đăng nhập thành công
+                    //Lưu thông tin vào session
+                    $_SESSION['user_admin'] = $user;
+                    header( "Location: ".BASE_URL_ADMIN);
+                    exit();
+                }else{
+                    //Lỗi thig lưu lỗi vào session
+                    $_SESSION['error'] = $user;
+
+                    $_SESSION['flash'] == true;
+                    header("Location: ".BASE_URL_ADMIN . "?act=login-admin");
+                    exit();
+                }
+            }
+        }
         
     }
