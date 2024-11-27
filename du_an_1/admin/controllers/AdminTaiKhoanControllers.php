@@ -117,7 +117,7 @@ public function resetPassword(){
     $tai_khoan_id=$_GET['id_quan_tri'];
     $tai_khoan=$this->modelTaiKhoan->getDetailTaiKhoan($tai_khoan_id);
 
-    $password = 123456;
+    $password = '123456';
     // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $status=$this->modelTaiKhoan->resetPassword($tai_khoan_id,$password);
