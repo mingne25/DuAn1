@@ -1,4 +1,5 @@
 <?php
+// session_start();
 class AdminTaiKhoanControllers{
     public $modelTaiKhoan;
     public $modelDonHang;
@@ -65,7 +66,7 @@ class AdminTaiKhoanControllers{
 
  }
 
- public function posteditQuanTri() {
+ public function postEditQuanTri() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quan_tri_id= $_POST['quan_tri_id'] ?? '';
 
@@ -116,7 +117,8 @@ public function resetPassword(){
     $tai_khoan_id=$_GET['id_quan_tri'];
     $tai_khoan=$this->modelTaiKhoan->getDetailTaiKhoan($tai_khoan_id);
 
-    $password = password_hash('123@123ab', PASSWORD_BCRYPT);
+    $password = 123456;
+    // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $status=$this->modelTaiKhoan->resetPassword($tai_khoan_id,$password);
     if ($status && $tai_khoan['chuc_vu_id']==1) {
@@ -144,7 +146,7 @@ public function danhSachKhachHang(){
         require_once "./views/taikhoan/khachhang/editKhachHang.php";
         deleteSessionError();
         }
-        public function posteditKhachHang() {
+        public function postEditKhachHang() {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $id_khach_hang= $_POST['id_khach_hang'] ?? '';
         
@@ -226,24 +228,38 @@ public function danhSachKhachHang(){
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
-                // var_dump($email);die;
+                
                 // Xử lí kiểm tra thông tin đăng nhập
                 $user = $this->modelTaiKhoan->checkLogin($email, $password);
-
-                if ($user) { // Trường hợp đăng nhập thành công
+                // var_dump($user);
+                // die;
+                if ($user == $email) { // Trường hợp đăng nhập thành công
                     //Lưu thông tin vào session
                     $_SESSION['user_admin'] = $user;
-                    header( "Location: ".BASE_URL_ADMIN);
+                    header( "Location: " . BASE_URL_ADMIN);
                     exit();
                 }else{
                     //Lỗi thig lưu lỗi vào session
                     $_SESSION['error'] = $user;
-
-                    $_SESSION['flash'] == true;
+                    // var_dump($_SESSION['error']);
+                    $_SESSION['flash'] = true;
                     header("Location: ".BASE_URL_ADMIN . "?act=login-admin");
                     exit();
                 }
             }
+        }
+        public function logout(){
+            if(isset($_SESSION['user_admin'])){
+                unset($_SESSION['user_admin']);
+                header("Location: ". BASE_URL_ADMIN . '?act=login-admin');
+            }
+        }
+
+        public function formEditCaNhanQuanTri(){
+            $email = $_SESSION['user_admin'];
+            $thongTin = $this->modelTaiKhoan->getTaiKhoanformEmail($email);
+            require_once './views/taikhoan/canhan/editCaNhan.php';
+            deleteSessionError();
         }
         
     }
