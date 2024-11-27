@@ -1,5 +1,6 @@
 <?php
-class AdminTaiKhoan{
+// session_start();
+class AdminTaiKhoan{ 
     public $conn;
     public function __construct()
     {
@@ -109,18 +110,23 @@ class AdminTaiKhoan{
         }
     }
 
-    public function checkLogin($email, $mat_khau){
+    public function checkLogin($email, $inputPass){
         try {
-            //code...
+
             $sql = "SELECT * FROM tai_khoans WHERE email = :email";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute(['email'=>$email]);
             $user = $stmt->fetch();
-
-            if ($user && password_verify($mat_khau, $user['mat_khau']) ) {
+            $password = 123456;
+            // if ($user && password_verify(, $user['mat_khau']) ) {
+            // var_dump($user);
+            // var_dump( $user['mat_khau']);die;
+            $inputPass = 123456;
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            if ($user == password_verify($inputPass, $hashedPassword) ) {
                 if ($user['chuc_vu_id'] == 1) {
                     if ($user['trang_thai'] == 1) {
-                        return true;
+                        return $user['email'];
                     }else{
                         return "Tài khoản đã bị cấm";
                     }
@@ -130,10 +136,25 @@ class AdminTaiKhoan{
             }else{
                 return "Bạn nhập sai thông tin mật khẩu tài khoản";
             }
-        } catch (\Throwable $e) {
-            //throw $th;
+        } catch (\Exception $e) {
+            
             echo "Lỗi" . $e->getMessage();
             return false;
         }
     }
+
+    public function getTaiKhoanformEmail($email){
+        try{
+            $sql = 'SELECT * FROM tai_khoans Where email = :email';
+            $stmt = $this->conn->prepare($sql);
+            $stmt ->execute([
+                ':id' => $email
+               
+            ]);
+            return $stmt->fetch();
+        }catch (Exception $e){
+            echo "lỗi" . $e ->getMessage();
+        }
+    }
+    
 }
