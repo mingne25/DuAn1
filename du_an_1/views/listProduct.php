@@ -7,9 +7,9 @@
 </head>
 <body>
     <ul>
-        <?php foreach($listProduct as $product) :?>
-            <li><?php echo $product['ten_san_pham'] ; ?></li>
-            <?php endforeach?>
+        <?php foreach($listProduct as $key=> $product): ?>
+        <li><?php echo $product['name']; ?></li>
+        <?php endforeach ?>
     </ul>
 </body>
 </html>
