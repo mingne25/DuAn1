@@ -258,6 +258,7 @@ public function danhSachKhachHang(){
         public function formEditCaNhanQuanTri(){
             $email = $_SESSION['user_admin'];
             $thongTin = $this->modelTaiKhoan->getTaiKhoanformEmail($email);
+            // var_dump($thongTin);die;
             require_once './views/taikhoan/canhan/editCaNhan.php';
             deleteSessionError();
         }

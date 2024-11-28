@@ -32,9 +32,12 @@
 
                 <div class="col-md-3">
                     <div class="text-center">
-                        <img src="<?= BASE_URL . $thongTin['anh_dai_dien'] ?>"style="width: 100px" class="avatar img-circle" alt="avatar"  onerror="this.onerorr=null; this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-3afJuXe5nCNIn9j5xfMQZ4Ov3ObgCY9w4PjCXHJivkldezhENEs-W2L6sWvFiT-ae-w&usqp=CAU'">
-                        <h6 class="mt-2">Họ tên: <?= $thongTin['ho_ten'] ?></h6>
-                        <h6 class="mt-2">Chức vụ: <?= $thongTin['chuc_vu_id'] ?></h6>
+                        <img src="<?= BASE_URL . $thongTin['anh_dai_dien'] ?>"
+                            style="width: 100px" class="avatar img-circle" 
+                            alt="avatar"  
+                            onerror="this.onerror=null; this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-3afJuXe5nCNIn9j5xfMQZ4Ov3ObgCY9w4PjCXHJivkldezhENEs-W2L6sWvFiT-ae-w&usqp=CAU'">
+                        <!-- <h6 class="mt-2">Họ tên: <?= $thongTin['ho_ten'] ?></h6>
+                        <h6 class="mt-2">Chức vụ: <?= $thongTin['chuc_vu_id'] ?></h6> -->
                     </div>
                 </div>
 
