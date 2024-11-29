@@ -43,7 +43,7 @@
             <hr>
             <h4 class="mt-3">Giá tiền: <small><?= $sanPham['gia_san_pham'] ?></small></h4>
             <h4 class="mt-3">Giá khuyến mãi: <small><?= $sanPham['gia_khuyen_mai'] ?></small></h4>
-            <h4 class="mt-3">Số lượng: <small><?= $sanPham['luot_xem'] ?></small></h4>
+            <h4 class="mt-3">Số lượng: <small><?= $sanPham['so_luong'] ?></small></h4>
             <h4 class="mt-3">Ngày nhập: <small><?= $sanPham['ngay_nhap'] ?></small></h4>
             <h4 class="mt-3">Tên danh mục: <small><?= $sanPham['ten_danh_muc'] ?></small></h4>
             <h4 class="mt-3">Trạng thái: <small><?= $sanPham['trang_thai'] == 1 ? 'Còn bán' : 'Dừng bán' ?></small></h4>
@@ -52,7 +52,7 @@
         </div>
         <div class="col-12">
           <hr>
-          <h2>Bình luận của sản phẩm</h2>
+          <h2>Quản lý bình luận của sản phẩm</h2>
           <div>
             <table id="example1" class="table table-bordered table-striped">
               <thead>

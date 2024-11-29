@@ -75,7 +75,8 @@
                   Thông tin người đặt
                   <address>
                     <strong><?=$donHang['ho_ten']?></strong><br>
-                    Email: <?=$donHang['email']?>
+                    Email: <?=$donHang['email']?> 
+                    <br>
                     Phone: <?=$donHang['so_dien_thoai']?><br>
                   </address>
                 </div>
@@ -85,18 +86,18 @@
                   <address>
                     <strong><?=$donHang['ten_nguoi_nhan']?></strong><br>
                      Email: <?=$donHang['email_nguoi_nhan']?><br>
-                     Số điện thoại:<?=$donHang['sdt_nguoi_nhan']?><br>
-                     Địa chỉ:<?=$donHang['dia_chi_nguoi_nhan']?>
+                     Số điện thoại: <?=$donHang['sdt_nguoi_nhan']?><br>
+                     Địa chỉ: <?=$donHang['dia_chi_nguoi_nhan']?>
                    
                   </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
                   Thông tin đơn hàng<br>
-                  <strong>Mã đơn hàng:<?=$donHang['ma_don_hang']?></strong><br>
-                  Tổng tiền:<?=$donHang['tong_tien']?><br>
-                  Ghi chú:<?=$donHang['ghi_chu']?><br>
-                  Thanh toán:<?=$donHang['ten_phuong_thuc']?>
+                  <strong>Mã đơn hàng: <?=$donHang['ma_don_hang']?></strong><br>
+                  Tổng tiền: <?=$donHang['tong_tien']?><br>
+                  Ghi chú: <?=$donHang['ghi_chu']?><br>
+                  Thanh toán: <?=$donHang['ten_phuong_thuc']?>
                 </div>
                 <!-- /.col -->
               </div>
@@ -137,22 +138,22 @@
               <div class="row">
                 <!-- accepted payments column -->
                 <div class="col-6">
-                  <p class="lead">Ngày đặt hàng:<?=$donHang['ngay_dat']?></p>
+                  <p class="lead">Ngày đặt hàng: <?=$donHang['ngay_dat']?></p>
                   
                   <div class="table-responsive">
                     <table class="table">
                       <tr>
-                        <th style="width:50%">Thành tiền:</th>
+                        <th style="width:50%">Thành tiền: </th>
                         <td><?=$tong_tien?></td>
                       </tr>
                      
                       <tr>
-                        <th>Vận chuyển:</th>
-                        <td>200.000</td>
+                        <th>Vận chuyển: </th>
+                        <td>20000</td>
                       </tr>
                       <tr>
                         <th>Tổng tiền:</th>
-                        <td><?=$tong_tien+200.0000?></td>
+                        <td><?=$tong_tien+20000?></td>
                       </tr>
                     </table>
                   </div>

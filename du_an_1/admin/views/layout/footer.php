@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      By<b>Nhóm 4</b>
+      By<b>Group 4</b>
     </div>
     <strong>WEBSITE BÁN QUẦN ÁO FAESHOP</strong> 
   </footer>
