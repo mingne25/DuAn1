@@ -114,7 +114,7 @@
 
         <div class="col-12">
           <hr>
-          <h2>Lịch sử bình luận</h2>
+          <h2>Quản lý lịch sử bình luận</h2>
           <div>
             <table id="example2" class="table table-bordered table-striped">
               <thead>
