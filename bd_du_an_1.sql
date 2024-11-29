@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 27, 2024 at 12:32 PM
+-- Generation Time: Nov 29, 2024 at 11:34 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -255,9 +255,9 @@ CREATE TABLE `tai_khoans` (
 --
 
 INSERT INTO `tai_khoans` (`id`, `ho_ten`, `anh_dai_dien`, `ngay_sinh`, `email`, `so_dien_thoai`, `gioi_tinh`, `dia_chi`, `mat_khau`, `chuc_vu_id`, `trang_thai`) VALUES
-(1, 'Lý Hồng Công', NULL, '2005-03-20', 'conglhph48542@gmail.com', '0358650913', 1, '41 ngõ 53 Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '$2y$10$g2fpiW8L7EJZs2N1zCqbyuzjU.Tas4Om1ITywRmYrOxlWhcJ9F4Cq', 2, 2),
-(2, 'Admin', NULL, '2024-11-23', 'admin@gmail.com', '0123456789', 1, 'FPT Polytechnic', '$2y$10$g2fpiW8L7EJZs2N1zCqbyuzjU.Tas4Om1ITywRmYrOxlWhcJ9F4Cq', 1, 1),
-(3, 'Nguyễn Tấn Minh', NULL, '2024-11-01', 'minhntph48524@gmail.com', '0981672665', 1, 'Thanh Hải, Thanh Hà, Hải Dương', '$2y$10$g2fpiW8L7EJZs2N1zCqbyuzjU.Tas4Om1ITywRmYrOxlWhcJ9F4Cq', 1, 1);
+(1, 'Lý Hồng Công', NULL, '2005-03-20', 'conglhph48542@gmail.com', '0358650913', 1, '41 ngõ 53 Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '123456', 2, 2),
+(2, 'Admin', NULL, '2024-11-23', 'admin@gmail.com', '0123456789', 1, 'FPT Polytechnic', '123456', 1, 1),
+(3, 'Nguyễn Tấn Minh', NULL, '2024-11-01', 'minhntph48524@gmail.com', '0981672665', 1, 'Thanh Hải, Thanh Hà, Hải Dương', '123456', 1, 1);
 
 -- --------------------------------------------------------
 
