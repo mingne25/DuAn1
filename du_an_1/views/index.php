@@ -15,22 +15,7 @@
   <div class="container">
     <h2>Sản Phẩm Nổi Bật</h2>
     <div class="product-list">
-      <?php
-        $featuredProducts = [
-          ["img" => "2.jpg", "name" => "Áo hoodie", "price" => "500,000đ"],
-          ["img" => "4.jpg", "name" => "Bộ Áo Quần NY", "price" => "1,200,000đ"],
-          ["img" => "6.jpg", "name" => "Áo hoodie mỏng", "price" => "800,000đ"],
-        ];
-
-        foreach ($featuredProducts as $product) {
-          echo "<div class='product-item'>
-                  <img src='/DuAn1-main/du_an_1/mvc-oop-basic/img/{$product['img']}' alt='{$product['name']}'>
-                  <h3>{$product['name']}</h3>
-                  <p>Giá: {$product['price']}</p>
-                  <button class='btn-secondary'>Xem chi tiết</button>
-                </div>";
-        }
-      ?>
+      
     </div>
   </div>
 </section>

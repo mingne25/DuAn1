@@ -2,9 +2,7 @@
 define('BASE_URL', 'DuAn1'); // Đường dẫn gốc của dự án
 
 // Hàm để lấy đường dẫn ảnh đầy đủ
-function get_image_url($path) {
-    return BASE_URL . $path;
-}
+
 
 // Wishlist data
 $wishlist = [
@@ -12,23 +10,23 @@ $wishlist = [
         "name" => "Bộ quần áo ngủ", 
         "current_price" => 960, 
         "original_price" => 1160, 
-        "image" => get_image_url("/du_an_1/views/img/logo.jpg"), 
+        "image" => ("/du_an_1/img/logo.jpg"), 
         "discount" => "35%"
     ],
     [
         "name" => "RGB liquid CPU Cooler", 
         "current_price" => 1960, 
-        "image" => get_image_url("/du_an_1/img/2.jpg")
+        "image" => ("/du_an_1/img/2.jpg")
     ],
     [
         "name" => "GPII Shooter USB Gamepad", 
         "current_price" => 550, 
-        "image" => get_image_url("/du_an_1/img/3.jpg")
+        "image" => ("/du_an_1/img/3.jpg")
     ],
     [
         "name" => "Quilted Satin Jacket", 
         "current_price" => 750, 
-        "image" => get_image_url("/du_an_1/img/4.jpg")
+        "image" => ("/du_an_1/img/4.jpg")
     ]
 ];
 
@@ -38,24 +36,24 @@ $justForYou = [
         "name" => "ASUS FHD Gaming Laptop", 
         "current_price" => 960, 
         "original_price" => 1160, 
-        "image" => get_image_url("/du_an_1/img/5.jpg"), 
+        "image" => ("/du_an_1/img/5.jpg"), 
         "discount" => "35%"
     ],
     [
         "name" => "IPS LCD Gaming Monitor", 
         "current_price" => 1160, 
-        "image" => get_image_url("/du_an_1/img/6.jpg")
+        "image" => ("/du_an_1/img/6.jpg")
     ],
     [
         "name" => "HAVIT HV-G92 Gamepad", 
         "current_price" => 560, 
-        "image" => get_image_url("/du_an_1/img/7.jpg"), 
+        "image" => ("/du_an_1/img/7.jpg"), 
         "badge" => "NEW"
     ],
     [
         "name" => "AK-900 Wired Keyboard", 
         "current_price" => 200, 
-        "image" => get_image_url("/du_an_1/img/8.jpg")
+        "image" => ("/du_an_1/img/8.jpg")
     ]
 ];
 
@@ -85,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <img src="<?= get_image_url('/du_an_1/img/logo.jpg') ?>" alt="logo" width="150">
+                    <img src="<?= ('/du_an_1/img/logo.jpg') ?>" alt="logo" width="150">
                 </div>
                 <nav class="nav">
                     <a class="nav-link" href="#">Trang chủ</a>
