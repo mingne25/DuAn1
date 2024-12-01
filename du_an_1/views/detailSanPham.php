@@ -4,7 +4,19 @@ require_once 'layout/menu.php';
 ?>
 
 <main>
-
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?= BASE_URL ?>"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="shop.html">Sản phẩm</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -12,7 +24,42 @@ require_once 'layout/menu.php';
     </div>
     <!-- breadcrumb area end -->
 
+    <!-- page main wrapper start -->
+    <div class="shop-main-wrapper section-padding pb-0">
+        <div class="container">
+            <div class="row">
+                <!-- product details wrapper start -->
+                <div class="col-lg-12 order-1 order-lg-2">
+                    <!-- product details inner end -->
+                    <div class="product-details-inner">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="product-large-slider">
+                                    <?php foreach ($listAnhSanPham as $key => $anhSanPham): ?>
+                                        <div class="pro-large-img img-zoom">
+                                            <img src="<?= BASE_URL . $anhSanPham['link_hinh_anh'] ?>" alt="product-details" />
+                                        </div>
+                                    <?php endforeach ?>
                                 </div>
+                                <div class="pro-nav slick-row-10 slick-arrow-style">
+                                    <?php foreach ($listAnhSanPham as $key => $anhSanPham): ?>
+                                        <div class="pro-nav-thumb">
+                                            <img src="<?= BASE_URL . $anhSanPham['link_hinh_anh'] ?>" alt="product-details" />
+                                        </div>
+                                    <?php endforeach ?>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="product-details-des">
+                                    <div class="manufacturer-name">
+                                        <a href="#"><?= $sanPham['ten_danh_muc'] ?></a>
+                                    </div>
+                                    <h3 class="product-name"><?= $sanPham['ten_san_pham'] ?></h3>
+                                    <div class="ratings d-flex">
+                                        <div class="pro-review">
+                                            <?php $countComment = count($listBinhLuan); ?>
+                                            <span><?= $countComment . ' bình luận' ?></span>
+                                        </div>
                                     </div>
                                     <div class="price-box">
                                         <?php if ($sanPham['gia_khuyen_mai']) { ?>
@@ -67,7 +114,33 @@ require_once 'layout/menu.php';
                                                 <a class="c-brown" href="#" title="Brown"></a>
                                             </li>
                                         </ul>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product details inner end -->
+
+                    <!-- product details reviews start -->
+                    <div class="product-details-reviews section-padding pb-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="product-review-info">
+                                    <ul class="nav review-tab">
+
+                                        <li>
+                                            <a class="active" data-bs-toggle="tab" href="#tab_three">Bình luận (<?= $countComment ?>)</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content reviews-tab">
+
+                                        <div class="tab-pane fade show active" id="tab_three">
+                                            <?php foreach ($listBinhLuan as $binhLuan): ?>
+
+                                                <div class="total-reviews">
+                                                    <div class="rev-avatar">
+                                                        <img src="<?= $binhLuan['anh_dai_dien'] ?>" alt="">
                                                     </div>
                                                     <div class="review-box">
 
