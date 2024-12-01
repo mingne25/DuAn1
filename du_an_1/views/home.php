@@ -105,7 +105,7 @@ require_once 'layout/menu.php';
                 <div class="col-sm-6">
                     <figure class="banner-statistics mt-20">
                         <a href="#">
-                            <img src="assets/img/banner/banner01.jpg" alt="product banner">
+                            <img src="assets/img/banner/1.jpg" alt="product banner">
                         </a>
                         <div class="banner-content text-center">
                             <h5 class="banner-text1">Đẹp, chất lượng cao</h5>
@@ -117,7 +117,7 @@ require_once 'layout/menu.php';
                 <div class="col-sm-6">
                     <figure class="banner-statistics mt-20">
                         <a href="#">
-                            <img src="assets/img/banner/banner02.jpg" alt="product banner">
+                            <img src="assets/img/banner/2.jpg" alt="product banner">
                         </a>
                         <div class="banner-content text-center">
                             <h5 class="banner-text1">Nhanh tay kẻo lỡ</h5>
