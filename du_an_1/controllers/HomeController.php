@@ -20,19 +20,9 @@ class HomeController
     }
 
     public function chiTietSanPham(){
-        $id = $_GET['id_san_pham'];
-        $sanPham = $this->modelSanPham->getDetailSanPham($id);
-        // var_dump($sanPham);die;
-        $listAnhSanPham =$this->modelSanPham->getListAnhSanPham($id);
-        $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
-        // var_dump($listAnhSanPham);die;
-        if($sanPham){
-            require_once "./views/detailSanPham.php";
+            $id = $_GET['id_san_pham'];
+            $sanPham = $this->modelSanPham->getDetailSanPham($id);
             
-        }else{
-            header("location:" . BASE_URL);
-                exit();
-        }
     }
 
     public function formLogin(){
@@ -68,5 +58,6 @@ class HomeController
         }
     }
 
+    
     
 }
