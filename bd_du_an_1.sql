@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th10 29, 2024 lúc 12:01 PM
+-- Thời gian đã tạo: Th12 01, 2024 lúc 07:14 PM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.1.10
 
@@ -84,7 +84,9 @@ CREATE TABLE `chi_tiet_gio_hangs` (
 --
 
 INSERT INTO `chi_tiet_gio_hangs` (`id`, `gio_hang_id`, `san_pham_id`, `so_luong`) VALUES
-(1, 1, 1, 3);
+(4, 4, 1, 3),
+(5, 4, 2, 3),
+(6, 4, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -169,7 +171,7 @@ CREATE TABLE `gio_hangs` (
 --
 
 INSERT INTO `gio_hangs` (`id`, `tai_khoan_id`) VALUES
-(1, 1);
+(4, 1);
 
 -- --------------------------------------------------------
 
@@ -235,10 +237,12 @@ CREATE TABLE `san_phams` (
 --
 
 INSERT INTO `san_phams` (`id`, `ten_san_pham`, `gia_san_pham`, `gia_khuyen_mai`, `hinh_anh`, `so_luong`, `luot_xem`, `ngay_nhap`, `mo_ta`, `danh_muc_id`, `trang_thai`) VALUES
-(1, 'Áo Phông nam', 50000, 40000, './uploads/17322803441.gif', 7, 0, '2024-11-22', 'Áo phông nam đẹp, chất vải mềm mịn thoáng mát', 1, 1),
+(1, 'Áo Phông nam', 50000, 40000, './uploads/17330454254.jpg', 7, 0, '2024-11-22', 'Áo phông nam đẹp, chất vải mềm mịn thoáng mát', 1, 1),
 (2, 'áo khoác', 250000, 230000, './uploads/1732378816áo.jpg', 9, 0, '2024-11-23', 'Áo khoác gió nam , nữ siêu đẹp', 1, 1),
-(3, 'sp3', 122332, 1233333, './uploads/1732537677ảnh dừa.jpg', 12, 0, '2024-11-19', 'eqweqwe', 1, 1),
-(4, 'quần què', 1000000, 800000, './uploads/1732711807nhoi.gif', 7, 0, '2024-11-27', 'quần hoa hòe 7 sắc cầu vồng ', 4, 1);
+(3, 'sp3', 122332, 1233333, './uploads/17330454423.jpg', 12, 0, '2024-11-19', 'eqweqwe', 1, 1),
+(4, 'quần què', 1000000, 800000, './uploads/173304545612.jpg', 7, 0, '2024-11-27', 'quần hoa hòe 7 sắc cầu vồng ', 4, 1),
+(5, 'áo polo nam', 140000, 100000, './uploads/17330478889.jpg', 5, 0, '2024-12-01', 'Áo polo nam chất lượng cao', 1, 1),
+(6, 'quần đùi', 150000, 110000, './uploads/173305346220.jpg', 11, 0, '2024-12-01', 'quần đùi rất đùi', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -394,7 +398,7 @@ ALTER TABLE `chi_tiet_don_hangs`
 -- AUTO_INCREMENT cho bảng `chi_tiet_gio_hangs`
 --
 ALTER TABLE `chi_tiet_gio_hangs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `chuc_vus`
@@ -418,7 +422,7 @@ ALTER TABLE `don_hangs`
 -- AUTO_INCREMENT cho bảng `gio_hangs`
 --
 ALTER TABLE `gio_hangs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `hinh_anh_san_phams`
@@ -436,7 +440,7 @@ ALTER TABLE `phuong_thuc_thanh_toans`
 -- AUTO_INCREMENT cho bảng `san_phams`
 --
 ALTER TABLE `san_phams`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tai_khoans`
