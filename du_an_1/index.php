@@ -25,7 +25,7 @@ match ($act) {
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
-    // 'thanh-toan' => (new HomeController())->thanhToan(),
+    'thanh-toan' => (new HomeController())->thanhToan(),
 
     'login' => (new HomeController())->formLogin(),
     'check-login' => (new HomeController())->postLogin(),
