@@ -22,7 +22,7 @@ class TaiKhoan
             }
             if ($user['mat_khau'] == $password && $user['email'] == $email) {
                 if ($user['chuc_vu_id'] == 2) {
-                    if ($user['trang_thai'] == 2) {
+                    if ($user['trang_thai'] == 1) {
                         return $user['email'];
                     } else {
                         return "Tài khoản đã bị cấm";
