@@ -12,9 +12,9 @@ require_once 'layout/menu.php';
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb">
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="shop.html">shop</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">product details</li>
+                                    <li class="breadcrumb-item"><a href="<?= BASE_URL ?>"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="shop.html">Sản phẩm</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
                                 </ul>
                             </nav>
                         </div>
@@ -33,43 +33,8 @@ require_once 'layout/menu.php';
                         <!-- product details inner end -->
                         <div class="product-details-inner">
                             <div class="row">
+                                
                                 <div class="col-lg-5">
-                                    <div class="product-large-slider">
-                                        <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img1.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img2.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img3.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img4.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-large-img img-zoom">
-                                            <img src="assets/img/product/product-details-img5.jpg" alt="product-details" />
-                                        </div>
-                                    </div>
-                                    <div class="pro-nav slick-row-10 slick-arrow-style">
-                                        <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img1.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img2.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img3.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img4.jpg" alt="product-details" />
-                                        </div>
-                                        <div class="pro-nav-thumb">
-                                            <img src="assets/img/product/product-details-img5.jpg" alt="product-details" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
                                     <div class="product-details-des">
                                         <div class="manufacturer-name">
                                             <a href="product-details.html">HasTech</a>
@@ -183,20 +148,7 @@ require_once 'layout/menu.php';
                                                         erat mi, rutrum at sollicitudin rhoncus</p>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="tab_two">
-                                                <table class="table table-bordered">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>color</td>
-                                                            <td>black, blue, red</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>size</td>
-                                                            <td>L, M, S</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                        
                                             <div class="tab-pane fade" id="tab_three">
                                                 <form action="#" class="review-form">
                                                     <h5>1 review for <span>Chaz Kangeroo</span></h5>

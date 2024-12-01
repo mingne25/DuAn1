@@ -120,12 +120,12 @@
                 <a href="./assets/index2.html" class="h1">FAEShop</a>
             </div>
             <div class="card-body">
-            <?php if(isset($_SESSION['error'])) {?>
-                        <p class="text-danger login-box-msg"><?= $_SESSION['error'] ?></p>
-                        <?php  }else{?>
-                            <p class="login-box-msg">Vui lòng đăng nhập</p>
-                        <?php } ?>
-                
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <p class="text-danger login-box-msg"><?= $_SESSION['error'] ?></p>
+                <?php  } else { ?>
+                    <p class="login-box-msg">Vui lòng đăng nhập</p>
+                <?php } ?>
+
                 <form action="<?= BASE_URL_ADMIN . '?act=check-login-admin' ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email">
@@ -156,7 +156,7 @@
                 <p class="mb-1">
                     <a href="">Quên mật khẩu?</a>
                 </p>
-                
+
             </div>
             <!-- /.card-body -->
         </div>
