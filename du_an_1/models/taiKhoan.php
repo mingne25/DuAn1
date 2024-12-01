@@ -1,6 +1,6 @@
 <?php
 // session_start();
-class TaiKhoan
+class taiKhoan
 {
     public $conn;
     public function __construct()
@@ -36,5 +36,20 @@ class TaiKhoan
             return false;
         }
     }
+
+    public function getTaiKhoanFromEmail($email)
+    {
+        try {
+            $sql = 'SELECT * FROM tai_khoans Where email = :email';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':email' => $email
+            ]);
+            return $stmt->fetch();
+        } catch (Exception $e) {
+            echo "lỗi" . $e->getMessage();
+        }
+    }
+
 
 }
