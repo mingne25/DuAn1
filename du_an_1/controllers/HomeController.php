@@ -53,6 +53,7 @@ class HomeController
     public function formLogin(){
         require_once './views/auth/formLogin.php';
         deleteSessionError();
+        exit();
     }
     public function postLogin(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -73,7 +74,7 @@ class HomeController
                 $_SESSION['error'] = $user;
                 // var_dump($_SESSION['error']);
                 $_SESSION['flash'] = true;
-                header("Location: ".BASE_URL . "?act=login");
+                header("Location: " . BASE_URL . "?act=login");
                 exit();
             }
         }
