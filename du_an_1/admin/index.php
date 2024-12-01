@@ -77,8 +77,8 @@ match ($act) {
 
     //route quản lí tài khoản cá nhân (quản trị)
     'form-sua-thong-tin-ca-nhan-quan-tri'=>(new AdminTaiKhoanControllers())->formEditCaNhanQuanTri(),
-    'sua-thong-tin-ca-nhan-quan-tri'=>(new AdminTaiKhoanControllers())->postEditCaNhanQuanTri(),
-    'sua-mat-khau-ca-nhan-quan-tri'=>(new AdminTaiKhoanControllers())->postEditMatKhauCaNhan(),
+    // 'sua-thong-tin-ca-nhan-quan-tri'=>(new AdminTaiKhoanControllers())->postEditCaNhanQuanTri(),
+    // 'sua-mat-khau-ca-nhan-quan-tri'=>(new AdminTaiKhoanControllers())->postEditMatKhauCaNhan(),
     
     //route auth
     'login-admin' => (new AdminTaiKhoanControllers())->formLogin(),

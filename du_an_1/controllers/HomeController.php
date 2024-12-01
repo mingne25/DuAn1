@@ -78,5 +78,51 @@ class HomeController
             }
         }
     }
+
+    public function gioHang(){
+        if (isset($_SESSION['user_client'])) {
+            $mail = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+
+            $gioHang = $this->modelGioHang->getGioHangFromUser($mail['id']);
+            if(!$gioHang){
+                $gioHangId = $this->modelGioHang->addGioHang($mail['id']);
+                $gioHang = ['id'=>$gioHangId];
+                $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+            }else{
+                $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+            }
+
+            require_once './views/gioHang.php';
+        }else{
+            header("Location: " . BASE_URL . "?act=login");
+        }
+        
+    }
+
+
+    public function thanhToan(){
+        if (isset($_SESSION['user_client'])) {
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+
+            $gioHang = $this->modelGioHang->getGioHangFromUser($user['id']);
+            if(!$gioHang){
+                $gioHangId = $this->modelGioHang->addGioHang($user['id']);
+                $gioHang = ['id'=>$gioHangId];
+                $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+            }else{
+                $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+            }
+
+            require_once './views/thanhToan.php';
+        }else{
+            var_dump('Chưa đăng nhập');die;
+        }
+        
+    }
+    public function postThanhToan(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+        }
+    }
     
 }

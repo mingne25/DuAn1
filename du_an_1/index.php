@@ -21,6 +21,8 @@ match ($act) {
     // Trang chủ
     '/' => (new HomeController())->home(),
 
+    'thanh-toan' =>(new HomeController())->thanhToan(),
+    'xu-ly-thanh-toan' =>(new HomeController())->postThanhToan(),
     
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
     'login' => (new HomeController())->formLogin(),
