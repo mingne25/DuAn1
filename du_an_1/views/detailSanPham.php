@@ -145,7 +145,7 @@ require_once 'layout/menu.php';
                                                     <div class="review-box">
 
                                                         <div class="post-author">
-                                                            <p><span>Khách hàng - </span><?= $binhLuan['ngay_dang'] ?></p>
+                                                            <p><span><?= $binhLuan['ho_ten'] ?> - </span><?= $binhLuan['ngay_dang'] ?></p>
                                                         </div>
                                                         <p><?= $binhLuan['noi_dung'] ?></p>
                                                     </div>
